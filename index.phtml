@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca por raças</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=My+Soul&family=Square+Peg&family=Updock&family=Whisper&display=swap" rel="stylesheet">
+    <script src="cli/main.js"></script>
+    <link rel="stylesheet" href="cli/main.css">
+</head>
+
+<body>
+    <h3>Busca por raças</h3>
+    <form>
+        <div>
+            <div>
+                <label>Raças:</label>
+                <select name="listaCachorros" id="listaCachorros" onchange="changeBreed()">
+                    <option value=""></option>
+                    <?php
+                    require(__DIR__ . '/srv/Service/DogListBreed.php');
+                    foreach ($breedList as $breed) {
+                        echo '<option value="' . $breed . '">' . ucfirst($breed) . '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+            <div>
+                <label>Nome do Cachorro:</label>
+                <input type="text" id="nomeCachorro" name="nomeCachorro">
+            </div>
+        </div>
+        <button type="submit">Buscar</button><hr>
+        <?php
+        require(__DIR__ . '/srv/Service/DogGetImage.php');
+        echo $imagem;
+        ?>
+        <hr>
+        <div>
+            <label>Cor da fonte:</label>
+            <select name="corfonte" id="corfonte" onchange="changeColor()">
+                <option value="black">Preto</option>
+                <option value="red">Vermelho</option>
+                <option value="blue">Azul</option>
+                <option value="green">Verde</option>
+                <option value="yellow">Amarelo</option>
+            </select>
+        </div>
+        <div>
+            <label>Fontes:</label>
+            <select name="fonte" id="fonte" onchange="changeFont()">
+                <option value=""></option>
+                <option value="Ms Madi">Ms Madi</option>
+                <option value="My Soul">My Soul</option>
+                <option value="Square Peg">Square Peg</option>
+                <option value="Updock">Updock</option>
+                <option value="Whisper">Whisper</option>
+            </select>
+        </div>
+        <button type="button" onclick="saveState()">Salvar dados</button>
+    </form>
+</body>
+
+</html>
