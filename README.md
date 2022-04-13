@@ -2,6 +2,10 @@
 
 Projeto que buscar imagem de uma raça de cachorro
 
-#Como Rodar
+# Requisitos
 
-É necessario ter o apache instalado, após ter instalar basta abrir o arquivo 'index.phtml'
+PHP 7.2
+
+# Como Rodar
+
+É necessário ter o apache instalado, após concluir a instalação basta abrir o arquivo 'index.phtml'
