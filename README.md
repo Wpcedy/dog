@@ -1,6 +1,6 @@
 # dog
 
-Projeto que buscar imagem de uma raça de cachorro
+Projeto que busca imagem de uma raça de cachorro
 
 # Requisitos
 
@@ -12,5 +12,5 @@ PHP 7.2
 
 # Apresentação
 
-[Youtube](https://youtu.be/9OmqIzPtWVo).
+[Youtube](https://youtu.be/9OmqIzPtWVo)
 
